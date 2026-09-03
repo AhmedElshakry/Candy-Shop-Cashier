@@ -1,4 +1,9 @@
 
+
+**Author:** أحمد إبراهيم السيد الشاكري  
+**GMAIl:** ahmedelshakry839@gmail.com
+
+
 Candy Shop Cashier Project
 
 Non-Representable Change Limitation:
