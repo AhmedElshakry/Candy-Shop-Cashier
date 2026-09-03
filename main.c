@@ -524,10 +524,11 @@ static void dayReport(void)
 
     for (i = 0U; i < CANDY_KINDS; i++)
     {
-        printf("%-15s Sold: %u  Stock: %u\n",
-               shelf[i].name,
-               (unsigned int)shelf[i].sold,
-               (unsigned int)shelf[i].stock);
+        
+printf("%-15s Sold: %u  Stock: %u\n",
+       shelf[i].name,
+       (unsigned int)shelf[i].sold,
+       (unsigned int)shelf[i].stock);
     }
 
     best = bestseller();
@@ -539,4 +540,46 @@ static void dayReport(void)
            (unsigned int)shelf[best].sold);
 
     printf("====================================\n");
+}
+
+// دالة عملتها عشان اختبر الكود واعمله Run
+int main(void)
+{
+    unsigned int choice;
+    openShop();
+    
+    while (1)
+    {
+        printf("\n==============================\n");
+        printf("      CANDY SHOP SYSTEM\n");
+        printf("==============================\n");
+        printf("1. Show Shelf\n");
+        printf("2. Add to Basket\n");
+        printf("3. Remove from Basket\n");
+        printf("4. Show Basket\n");
+        printf("5. Checkout\n");
+        printf("6. Day Report\n");
+        printf("7. Exit\n");
+        printf("Enter choice: ");
+        
+        if (scanf("%u", &choice) != 1)
+        {
+            printf("Invalid input.\n");
+            while (getchar() != '\n');
+            continue;
+        }
+        
+        switch (choice)
+        {
+            case 1: showShelf(); break;
+            case 2: addToBasket(); break;
+            case 3: removeFromBasket(); break;
+            case 4: showBasket(); break;
+            case 5: checkout(); break;
+            case 6: dayReport(); break;
+            case 7: return 0;
+            default: printf("Invalid choice.\n"); break;
+        }
+    }
+    return 0;
 }
